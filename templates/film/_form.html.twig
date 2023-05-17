@@ -1,0 +1,40 @@
+
+
+
+
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+
+<div style="background-color:#fea347 ;
+    padding: 20px;width:500px;
+height:700px;margin-left:300px;margin-top:30px">
+<img src="{{ asset('media/cinema.jpg') }}" alt="image" style="width:440px;height:180px">
+<br>
+<h1 style="text-align: center;color:black">Créer Un Film !</h1>
+<br>
+
+        {{ form_start(form) }}
+       
+            {{ form_row(form.titre)}}
+    <br>
+            {{ form_row(form.genre) }}
+     
+        <br>
+		  {{ form_row(form.langue) }}
+		  <br>
+            {{ form_row(form.typeDeTournage) }}
+       <br>
+	     {{ form_row(form.photo) }}
+		 <br>
+            {{ form_row(form.societeDeProduction) }}
+       <br>
+            {{ form_row(form.realisateur) }}
+        
+        {{ form_end(form) }}
+		<br>
+ <button class="btn">{{ button_label|default('Save') }}</button>
+
+
+   </div>

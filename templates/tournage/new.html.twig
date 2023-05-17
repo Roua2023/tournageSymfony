@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Tournage{% endblock %}
+
+{% block body %}
+    <h1>Create new Tournage</h1>
+
+    {{ include('tournage/_form.html.twig') }}
+
+    <a href="{{ path('app_tournage_index') }}">back to list</a>
+{% endblock %}

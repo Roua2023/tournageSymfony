@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SocieteDeProduction{% endblock %}
+
+{% block body %}
+    <h1>SocieteDeProduction</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ societe_de_production.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ societe_de_production.nom }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ societe_de_production.adresse }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+   <Button > 
+   <a href="{{ path('app_societe_de_production_index') }}">back to list</a>
+</Button>
+    <a href="{{ path('app_societe_de_production_edit', {'id': societe_de_production.id}) }}">edit</a>
+
+    {{ include('societe_de_production/_delete_form.html.twig') }}
+{% endblock %}

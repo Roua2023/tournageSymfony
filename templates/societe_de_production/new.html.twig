@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New SocieteDeProduction{% endblock %}
+
+{% block body %}
+   
+
+    {{ include('societe_de_production/_form.html.twig') }}
+
+  <div style="width:270px;height:40px"><a href="{{ path('app_societe_de_production_index') }}">
+  back to list</a></div>
+
+{% endblock %}

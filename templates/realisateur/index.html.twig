@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Realisateur index{% endblock %}
+
+{% block body %}
+<div style="margin-left:10%">
+    <h1>Realisateur index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Nationalite</th>
+                <th>Photo</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for realisateur in realisateurs %}
+            <tr>
+                <td>{{ realisateur.id }}</td>
+                <td>{{ realisateur.nom }}</td>
+                <td>{{ realisateur.prenom }}</td>
+                <td>{{ realisateur.nationalite }}</td>
+                <td>
+                    <img src={{asset('uploads/' ~ realisateur.photo)}} width="50%" />
+                </td>
+                <td>
+                    <a href="{{ path('app_realisateur_show', {'id': realisateur.id}) }}">show</a>
+                    <a href="{{ path('app_realisateur_edit', {'id': realisateur.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_realisateur_new') }}">Create new</a>
+</div>
+{% endblock %}

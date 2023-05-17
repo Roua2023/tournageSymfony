@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Realisateur{% endblock %}
+
+{% block body %}
+   
+
+    {{ include('realisateur/_form.html.twig') }}
+
+     <div style="width:60px;height:20px"><a href="{{ path('app_realisateur_index') }}">back to list</a>
+     </div>
+{% endblock %}

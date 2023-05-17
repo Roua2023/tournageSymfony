@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Lieu{% endblock %}
+
+{% block body %}
+    
+
+    {{ include('lieu/_form.html.twig') }}
+
+    <div style="width:60px;height:20px;margin-bottom:0px"> <a href="{{ path('app_lieu_index') }}">back to list</a>
+    </div>
+{% endblock %}

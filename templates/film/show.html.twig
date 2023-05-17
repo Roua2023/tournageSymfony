@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Film{% endblock %}
+
+{% block body %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <h1>Film</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ film.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ film.titre }}</td>
+            </tr>
+            <tr>
+                <th>Photo</th>
+                <td>
+                     <img src={{asset('uploads/' ~ film.photo )}} width="100%" />
+                </td>
+            </tr>
+            <tr>
+                <th>Genre</th>
+                <td>{{ film.genre }}</td>
+            </tr>
+            <tr>
+                <th>Langue</th>
+                <td>{{ film.langue }}</td>
+            </tr>
+            <tr>
+                <th>TypeDeTournage</th>
+                <td>{{ film.typeDeTournage }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+   <span style="background-color: blue" <a href="{{ path('app_film_index') }}">
+   back to list</a></span>
+
+    <a href="{{ path('app_film_edit', {'id': film.id}) }}">edit</a>
+
+    {{ include('film/_delete_form.html.twig') }}
+{% endblock %}
